@@ -1,0 +1,58 @@
+.cavus-araclar {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.management-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.add-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.list-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.list-card h4 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 900px) {
+  .management-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .list-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .list-card > div:last-child {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+}

@@ -1,0 +1,175 @@
+.admin-map-container {
+  height: calc(100vh - 120px);
+  min-height: 400px;
+  padding: 0;
+  overflow: hidden;
+  position: relative;
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+}
+
+.map-view {
+  flex: 1;
+  width: 100%;
+  z-index: 1;
+}
+
+.map-loading {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+}
+
+.map-style-switcher {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  z-index: 1000;
+  display: flex;
+  gap: 0.35rem;
+  background: var(--bg-secondary);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-md);
+}
+
+.map-style-btn {
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  padding: 0.4rem 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.map-style-btn.active {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.map-legend {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-color);
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  backdrop-filter: blur(8px);
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.legend-color {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* Radar Pulse for Truck Icons */
+.custom-truck-pulse {
+  background-color: #ef4444;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  animation: truckPulse 2s infinite;
+}
+
+@keyframes truckPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.8);
+  }
+  70% {
+    box-shadow: 0 0 0 14px rgba(239, 68, 68, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+  }
+}
+
+/* Leaflet Popup overrides for premium look */
+.leaflet-popup-content-wrapper {
+  border-radius: var(--radius-md) !important;
+  box-shadow: var(--shadow-md) !important;
+  padding: 0 !important;
+  background: var(--bg-secondary) !important;
+}
+
+.leaflet-popup-content {
+  margin: 0 !important;
+}
+
+.custom-popup .popup-content {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.custom-popup strong {
+  font-size: 1rem;
+}
+
+.popup-badge {
+  display: inline-block;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.popup-mahalle {
+  margin: 0;
+  margin-top: 4px;
+  font-size: 0.85rem;
+}
+
+@media (max-width: 768px) {
+  .admin-map-container {
+    height: calc(100vh - 100px);
+  }
+
+  .map-style-switcher {
+    top: 10px;
+    left: 10px;
+  }
+
+  .map-legend {
+    top: auto;
+    bottom: 25px;
+    right: 10px;
+    left: 10px;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 8px 10px;
+  }
+
+  .legend-item {
+    font-size: 0.75rem;
+  }
+}

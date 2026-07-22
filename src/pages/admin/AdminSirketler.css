@@ -1,0 +1,116 @@
+.admin-sirketler {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.sirket-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.25rem;
+}
+
+.sirket-card {
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  border-top: 4px solid transparent;
+}
+
+.sirket-card.status-bekliyor { border-top-color: #f59e0b; }
+.sirket-card.status-onaylandi { border-top-color: #10b981; }
+.sirket-card.status-reddedildi { border-top-color: #ef4444; }
+
+.c-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.c-icon-wrapper {
+  background: var(--bg-secondary);
+  color: var(--primary-color);
+  padding: 0.6rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.c-header h4 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.c-status-badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.c-status-badge.bekliyor { background: rgba(245, 158, 11, 0.15); color: #d97706; }
+.c-status-badge.onaylandi { background: rgba(16, 185, 129, 0.15); color: #059669; }
+.c-status-badge.reddedildi { background: rgba(239, 68, 68, 0.15); color: #dc2626; }
+
+.c-body {
+  background: var(--bg-secondary);
+  padding: 0.85rem;
+  border-radius: 8px;
+}
+
+.c-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.c-info-grid p {
+  margin: 0;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.c-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.c-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 768px) {
+  .sirket-list {
+    grid-template-columns: 1fr;
+  }
+
+  .c-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .c-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (max-width: 480px) {
+  .c-actions {
+    flex-direction: column;
+  }
+  .c-actions button {
+    width: 100%;
+  }
+}
